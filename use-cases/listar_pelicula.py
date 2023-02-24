@@ -1,6 +1,8 @@
 from sys import path
 from os import getcwd
 
+path.append(getcwd()+'\\Singleton')
+
 import PeliculaSingleton
 
 peliculas = PeliculaSingleton.PeliculaSingleton.getInstance().listaPeliculas
@@ -8,9 +10,9 @@ peliculas = PeliculaSingleton.PeliculaSingleton.getInstance().listaPeliculas
 def listar_pelicula(todo = False):
     for indice, pelicula in enumerate(peliculas):
         if todo:
-            print(f"{indice}: {pelicula['nombre']}, {pelicula['ano']}, {pelicula['genero']}")
+            print(f"{indice+1}: {pelicula['nombre']}, {pelicula['ano']}, {pelicula['genero']}")
         else:
-            print(f"{indice}: {pelicula['nombre']}")
+            print(f"{indice+1}: {pelicula['nombre']}")
 
 def listar_actores(nombre):
     nombre = nombre.replace(' ', '').lower()

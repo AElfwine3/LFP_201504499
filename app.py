@@ -1,9 +1,11 @@
 from sys import path
 from os import getcwd
+import msvcrt
 
 path.append(getcwd()+'\\Controllers')
+path.append(getcwd()+'\\use-cases')
 
-import cargar_entrada, listar_pelicula
+import cargar_entrada, crear_grafica, listar_pelicula
 
 def gestion_peliculas():
     while True:
@@ -70,6 +72,11 @@ def filtrar():
         else:
             print("Por favor elige una opcion del menu.")
 
+
+print("Lenguajes Formales y de Programacion B-")
+print("Elvin Leonel Mayen Carrillo")
+print("201504499")
+msvcrt.getch()
 while True:
     print()
     print("Elige una opcion por favor:")
@@ -96,6 +103,7 @@ while True:
         filtrar()
     elif opcion == "4":
         print("Crear Grafica")
+        crear_grafica.generar_grafica()
     elif opcion == "5":
         print("Adios!")
         break
